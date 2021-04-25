@@ -1,6 +1,6 @@
-extends Node2D
+extends Control
 
-onready var image_viewer = get_node("AspectRatioContainer/image_viewer")
+onready var image_viewer = get_node("AspectRatioContainer/ImageViewer")
 
 # creates empty image resource for loading an image into
 var img = Image.new()

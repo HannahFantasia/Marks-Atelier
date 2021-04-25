@@ -1,0 +1,22 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+uniform bool is_greyscale = false;
+
+void fragment() {
+	if (is_greyscale) {
+    COLOR = texture(TEXTURE, UV);
+    float avg = (COLOR.r + COLOR.g + COLOR.b) / 3.0;
+    COLOR.rgb = vec3(avg);
+	}
+	else {
+		COLOR = texture(TEXTURE, UV);
+	}
+}
+"
+
+[resource]
+shader = SubResource( 1 )
+shader_param/is_greyscale = false

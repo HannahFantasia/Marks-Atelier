@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/(3) mockup 2.png-992409ebdffcacca17125cf588382085.stex"
+path="res://.import/greyscale.png-bbd6acedead913397d7500df4282eb2d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://mockups and demos/(3) mockup 2.png"
-dest_files=[ "res://.import/(3) mockup 2.png-992409ebdffcacca17125cf588382085.stex" ]
+source_file="res://textures/placeholders/greyscale.png"
+dest_files=[ "res://.import/greyscale.png-bbd6acedead913397d7500df4282eb2d.stex" ]
 
 [params]
 

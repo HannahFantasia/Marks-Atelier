@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/(6) zoom slider position.png-10493fdda8c1e38f6bf1d66ffeef63eb.stex"
+path="res://.import/flip_h.png-b9321ff52d727707f13b628c81ce045a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://mockups and demos/(6) zoom slider position.png"
-dest_files=[ "res://.import/(6) zoom slider position.png-10493fdda8c1e38f6bf1d66ffeef63eb.stex" ]
+source_file="res://textures/placeholders/flip_h.png"
+dest_files=[ "res://.import/flip_h.png-b9321ff52d727707f13b628c81ce045a.stex" ]
 
 [params]
 

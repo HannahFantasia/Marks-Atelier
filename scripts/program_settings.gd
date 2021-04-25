@@ -1,7 +1,7 @@
 extends Node
 
 # grid line colour setting
-var grid_line_colour = Color(0,0,0) setget set_grid_line_colour , get_grid_line_colour
+var grid_line_colour = Color(255,255,255) setget set_grid_line_colour , get_grid_line_colour
 
 func set_grid_line_colour(value):
 	grid_line_colour = value

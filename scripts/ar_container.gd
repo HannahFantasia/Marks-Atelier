@@ -1,6 +1,6 @@
 extends AspectRatioContainer
 
-onready var image_texture= get_node("image_viewer").texture
+onready var image_texture= get_node("ImageViewer").texture
 
 
 func _process(delta):
@@ -15,4 +15,5 @@ func _process(delta):
 	rect_size = OS.window_size - ProgramSettings.image_margins 
 	rect_position = ProgramSettings.image_margins / 2
 	pass
+
 
