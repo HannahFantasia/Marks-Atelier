@@ -21,3 +21,4 @@ config/icon="res://icon.png"
 [autoload]
 
 ImageLoader="*res://scripts/image_loader.gd"
+ProgramSettings="*res://scripts/program_settings.gd"
