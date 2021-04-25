@@ -7,7 +7,7 @@
 [node name="main" type="Node2D"]
 script = ExtResource( 3 )
 
-[node name="image" type="TextureRect" parent="."]
+[node name="image_viewer" type="TextureRect" parent="."]
 rect_clip_content = true
 texture = ExtResource( 1 )
 expand = true
@@ -18,3 +18,27 @@ __meta__ = {
 }
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="Button" type="Button" parent="."]
+margin_left = 552.676
+margin_top = 177.803
+margin_right = 630.676
+margin_bottom = 213.803
+text = "path"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextEdit" type="TextEdit" parent="Button"]
+anchor_left = -2.43
+anchor_top = 0.03
+anchor_right = -2.43
+anchor_bottom = 0.03
+margin_left = -125.321
+margin_top = -3.66392
+margin_right = 169.679
+margin_bottom = 40.3361
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
