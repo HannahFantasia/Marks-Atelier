@@ -1,13 +1,13 @@
 extends Node2D
 
-onready var image_viewer = get_node("image_viewer")
+onready var image_viewer = get_node("AspectRatioContainer/image_viewer")
 var img = Image.new()
 
 func _ready():
+	pass
+#	image_viewer.texture = ImageTexture.new()
 	
-	image_viewer.texture = ImageTexture.new()
-	
-	ImageLoader.load_directory("C:/Users/Beheerder/Desktop/projects/drawings/1-02-2021")
+#	ImageLoader.load_directory("C:/Users/Beheerder/Desktop/projects/drawings/1-02-2021")
 
 
 
