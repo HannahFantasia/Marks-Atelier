@@ -1,6 +1,8 @@
 extends Node2D
 
 onready var image_viewer = get_node("AspectRatioContainer/image_viewer")
+
+# creates empty image resource for loading an image into
 var img = Image.new()
 
 func _ready():
