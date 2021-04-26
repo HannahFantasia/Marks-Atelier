@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://ScRR6m.jpg" type="Texture" id=1]
 [ext_resource path="res://scenes/image_viewer.gd" type="Script" id=2]
@@ -9,6 +9,12 @@
 [ext_resource path="res://textures/placeholders/stop.png" type="Texture" id=7]
 [ext_resource path="res://textures/placeholders/next.png" type="Texture" id=8]
 [ext_resource path="res://textures/placeholders/play.png" type="Texture" id=9]
+[ext_resource path="res://textures/placeholders/timer.png" type="Texture" id=10]
+[ext_resource path="res://textures/placeholders/flipv.png" type="Texture" id=11]
+[ext_resource path="res://textures/placeholders/fliph.png" type="Texture" id=12]
+[ext_resource path="res://textures/placeholders/openfolder.png" type="Texture" id=13]
+[ext_resource path="res://textures/placeholders/imageinfo.png" type="Texture" id=14]
+[ext_resource path="res://textures/placeholders/greyscale.png" type="Texture" id=15]
 
 [node name="main" type="Control"]
 script = ExtResource( 3 )
@@ -47,29 +53,80 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="OpenFolder" type="TextureButton" parent="AspectRatioContainer/Hotbar"]
+margin_left = 201.0
+margin_right = 217.0
+margin_bottom = 599.0
+texture_normal = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ImageInfo" type="TextureButton" parent="AspectRatioContainer/Hotbar"]
+margin_left = 221.0
+margin_right = 237.0
+margin_bottom = 599.0
+texture_normal = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Previous" type="TextureButton" parent="AspectRatioContainer/Hotbar"]
-margin_left = 261.0
-margin_right = 277.0
+margin_left = 241.0
+margin_right = 257.0
 margin_bottom = 599.0
 texture_normal = ExtResource( 6 )
 
 [node name="Stop" type="TextureButton" parent="AspectRatioContainer/Hotbar"]
-margin_left = 281.0
-margin_right = 297.0
+margin_left = 261.0
+margin_right = 277.0
 margin_bottom = 599.0
 texture_normal = ExtResource( 7 )
 
 [node name="Play" type="TextureButton" parent="AspectRatioContainer/Hotbar"]
-margin_left = 301.0
-margin_right = 317.0
+margin_left = 281.0
+margin_right = 297.0
 margin_bottom = 599.0
 texture_normal = ExtResource( 9 )
 
 [node name="Next" type="TextureButton" parent="AspectRatioContainer/Hotbar"]
+margin_left = 301.0
+margin_right = 317.0
+margin_bottom = 599.0
+texture_normal = ExtResource( 8 )
+
+[node name="FlipH" type="TextureButton" parent="AspectRatioContainer/Hotbar"]
 margin_left = 321.0
 margin_right = 337.0
 margin_bottom = 599.0
-texture_normal = ExtResource( 8 )
+texture_normal = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FlipV" type="TextureButton" parent="AspectRatioContainer/Hotbar"]
+margin_left = 341.0
+margin_right = 357.0
+margin_bottom = 599.0
+texture_normal = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Greyscale" type="TextureButton" parent="AspectRatioContainer/Hotbar"]
+margin_left = 361.0
+margin_right = 377.0
+margin_bottom = 599.0
+texture_normal = ExtResource( 15 )
+
+[node name="Timer" type="TextureButton" parent="AspectRatioContainer/Hotbar"]
+margin_left = 381.0
+margin_right = 397.0
+margin_bottom = 599.0
+texture_normal = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Timer" type="Timer" parent="."]
 
@@ -96,4 +153,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[connection signal="pressed" from="AspectRatioContainer/Hotbar/FlipH" to="AspectRatioContainer/ImageViewer" method="_on_FlipH_pressed"]
+[connection signal="pressed" from="AspectRatioContainer/Hotbar/FlipV" to="AspectRatioContainer/ImageViewer" method="_on_FlipV_pressed"]
+[connection signal="pressed" from="AspectRatioContainer/Hotbar/Greyscale" to="AspectRatioContainer/ImageViewer" method="_on_Greyscale_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
