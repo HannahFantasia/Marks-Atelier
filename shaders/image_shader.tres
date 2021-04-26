@@ -7,16 +7,15 @@ uniform bool is_greyscale = false;
 
 void fragment() {
 	if (is_greyscale) {
-    COLOR = texture(TEXTURE, UV);
-    float avg = (COLOR.r + COLOR.g + COLOR.b) / 3.0;
-    COLOR.rgb = vec3(avg);
+	vec3 col = texture(TEXTURE, UV).rgb;
+	float y = col.r * 0.299 + col.g * 0.587 + col.b * 0.114;
+	COLOR.rgb = vec3(y)
 	}
 	else {
 		COLOR = texture(TEXTURE, UV);
 	}
-}
-"
+}"
 
 [resource]
 shader = SubResource( 1 )
-shader_param/is_greyscale = false
+shader_param/is_greyscale = true
