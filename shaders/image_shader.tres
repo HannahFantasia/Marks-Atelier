@@ -18,4 +18,4 @@ void fragment() {
 
 [resource]
 shader = SubResource( 1 )
-shader_param/is_greyscale = true
+shader_param/is_greyscale = false

@@ -17,3 +17,12 @@ func set_image_margins(value : Vector2):
 
 func get_image_margins():
 	return image_margins
+
+#hotbar size 
+var hotbar_size = 24 setget set_hotbar_size , get_hotbar_size
+
+func set_hotbar_size(value):
+	hotbar_size = value
+
+func get_hotbar_size():
+	return hotbar_size

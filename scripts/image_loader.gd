@@ -5,6 +5,7 @@ var directory = Directory.new()
 var proxy = []
 var images = []
 
+
 func _ready():
 	
 	pass 

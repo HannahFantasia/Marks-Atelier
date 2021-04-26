@@ -1,6 +1,8 @@
 extends Control
 
-onready var image_viewer = get_node("AspectRatioContainer/ImageViewer")
+onready var image_viewer = get_node("Viewer/ImageViewer")
+onready var hotbar = get_node("Hotbar")
+onready var hotbar_bg = get_node("HotbarBg")
 
 # creates empty image resource for loading an image into
 var img = Image.new()
@@ -14,7 +16,15 @@ func _ready():
 
 
 func _process(delta):
+#	setting hotbar position and scale 
 	
+	hotbar.rect_position.x = 0
+	hotbar.rect_position.y = OS.window_size.y - ProgramSettings.hotbar_size
+	hotbar.rect_size.x = OS.window_size.x
+	
+#	setting the bg rect to match
+	hotbar_bg.rect_position = hotbar.rect_position
+	hotbar_bg.rect_size = hotbar.rect_size
 	pass
 
 
