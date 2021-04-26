@@ -161,6 +161,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[connection signal="pressed" from="AspectRatioContainer/Hotbar/OpenFolder" to="AspectRatioContainer/ImageViewer" method="_on_OpenFolder_pressed"]
 [connection signal="pressed" from="AspectRatioContainer/Hotbar/FlipH" to="AspectRatioContainer/ImageViewer" method="_on_FlipH_pressed"]
 [connection signal="pressed" from="AspectRatioContainer/Hotbar/FlipV" to="AspectRatioContainer/ImageViewer" method="_on_FlipV_pressed"]
 [connection signal="toggled" from="AspectRatioContainer/Hotbar/Grid" to="AspectRatioContainer/ImageViewer" method="_on_Grid_toggled"]

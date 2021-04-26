@@ -21,3 +21,10 @@ func _on_Greyscale_pressed():
 	var value = material.get_shader_param("is_greyscale")
 	value = not value
 	material.set_shader_param("is_greyscale", value)
+
+
+
+func _on_OpenFolder_pressed():
+	OS.shell_open("C:/Users/Public/Desktop")
+# this may help: get_texture()   print($Sprite.texture.resource_path)
+# idk how else to do it tbh but desktop is temporary.
