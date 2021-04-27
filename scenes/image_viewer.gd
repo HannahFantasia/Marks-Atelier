@@ -3,10 +3,26 @@ extends TextureRect
 
 
 func _draw():
-	var begin = Vector2(0,0)
-	var end = get_size()
-	draw_line(begin, end, ProgramSettings.get_grid_line_colour())
+	# defines grid size
+	var gridx = 3
+	var gridy = 3
+	# places grid in perfect division among axis on the x axis
+	var linea = Vector2(rect_size.x / gridx,0)
+	var lineb = Vector2(rect_size.x / gridx, rect_size.y)
+	# places grid in perfect division among axis on the y axis
+	var linex = Vector2(0,rect_size.y / gridy)
+	var liney = Vector2(rect_size.x, rect_size.y / gridy)
 	
+	# draw from top to bottom, still need to add increment formula
+	for n in range(gridx,0,-1):	
+		draw_line(linea, lineb, ProgramSettings.get_grid_line_colour())
+	# draw from left to right, still need to add increment formula
+	for n in range(gridy,0,-1):	
+		draw_line(linex, liney, ProgramSettings.get_grid_line_colour())
+	# I don't know how to update yet but this is important smh
+func _process(delta):
+	update()
+
 
 
 func _on_FlipV_pressed():
@@ -25,6 +41,7 @@ func _on_Greyscale_pressed():
 
 
 func _on_OpenFolder_pressed():
-	OS.shell_open("C:/Users/Public/Desktop")
+	print(self.texture.resource_path)
+	OS.shell_open(texture.resource_path)
 # this may help: get_texture()   print($Sprite.texture.resource_path)
 # idk how else to do it tbh but desktop is temporary.

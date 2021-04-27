@@ -16,4 +16,3 @@ func _process(delta):
 	rect_position = ProgramSettings.image_margins / 2
 	pass
 
-
