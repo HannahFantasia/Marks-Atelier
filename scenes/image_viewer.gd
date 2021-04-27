@@ -1,27 +1,34 @@
 extends TextureRect
 
+# defines grid size
+var gridx = 3
+var gridy = 3
+var draw_visible := true
+
+func _on_Grid_pressed():
+	draw_visible = not draw_visible
+	update()
 
 
 func _draw():
-	# defines grid size
-	var gridx = 3
-	var gridy = 3
-	# places grid in perfect division among axis on the x axis
-	var linea = Vector2(rect_size.x / gridx,0)
-	var lineb = Vector2(rect_size.x / gridx, rect_size.y)
-	# places grid in perfect division among axis on the y axis
-	var linex = Vector2(0,rect_size.y / gridy)
-	var liney = Vector2(rect_size.x, rect_size.y / gridy)
-	
+	if (!draw_visible):
+		return
+	else:
+	#all your drawing stuff here
 	# draw from top to bottom, still need to add increment formula
-	for n in range(gridx,0,-1):	
-		draw_line(linea, lineb, ProgramSettings.get_grid_line_colour())
+		for n in range(gridx - 1,0, -1):	
+		# places grid in perfect division among axis on the x axis
+			var linea = Vector2((rect_size.x / gridx) * n,0)
+			var lineb = Vector2((rect_size.x / gridx) * n, rect_size.y)
+			draw_line(linea, lineb, ProgramSettings.get_grid_line_colour())
+		
 	# draw from left to right, still need to add increment formula
-	for n in range(gridy,0,-1):	
-		draw_line(linex, liney, ProgramSettings.get_grid_line_colour())
-	# I don't know how to update yet but this is important smh
-func _process(delta):
-	update()
+		for n in range(gridy - 1,0,-1):	
+
+		# places grid in perfect division among axis on the y axis
+			var linex = Vector2(0,(rect_size.y / gridy) * n)
+			var liney = Vector2(rect_size.x,(rect_size.y / gridy) * n)
+			draw_line(linex, liney, ProgramSettings.get_grid_line_colour())
 
 
 
