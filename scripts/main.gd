@@ -21,6 +21,7 @@ func _process(delta):
 	hotbar.rect_position.x = 0
 	hotbar.rect_position.y = OS.window_size.y - ProgramSettings.hotbar_size
 	hotbar.rect_size.x = OS.window_size.x
+	hotbar.rect_size.y = ProgramSettings.hotbar_size
 	
 #	setting the bg rect to match
 	hotbar_bg.rect_position = hotbar.rect_position
