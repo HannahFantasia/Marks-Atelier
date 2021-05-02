@@ -1,8 +1,12 @@
 extends Control
 
+onready var timer_label = get_node("TimerLabel")
 onready var image_viewer = get_node("Viewer/ImageViewer")
 onready var hotbar = get_node("Hotbar")
 onready var hotbar_bg = get_node("HotbarBg")
+
+var timer_pos = Vector2()
+var schedule = []
 
 # creates empty image resource for loading an image into
 var img = Image.new()
@@ -17,6 +21,8 @@ func _ready():
 
 func _process(delta):
 #	setting hotbar position and scale 
+	timer_pos.x = get_viewport_rect().size.x - ProgramSettings.image_margins.x
+	timer_label.rect_position = timer_pos + Vector2(0,ProgramSettings.image_margins.y)
 	
 	hotbar.rect_position.x = 0
 	hotbar.rect_position.y = OS.window_size.y - ProgramSettings.hotbar_size

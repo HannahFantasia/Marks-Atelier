@@ -156,6 +156,20 @@ __meta__ = {
 }
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 60.0
+
+[node name="TimerLabel" type="Label" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = 892.323
+margin_top = 153.111
+margin_right = 1089.32
+margin_bottom = 216.111
+text = "tffds"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Button" type="Button" parent="."]
 margin_left = 552.676
