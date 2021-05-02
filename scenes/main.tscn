@@ -264,6 +264,5 @@ __meta__ = {
 [connection signal="pressed" from="Hotbar/OpenFolder" to="Viewer/ImageViewer" method="_on_OpenFolder_pressed"]
 [connection signal="pressed" from="Hotbar/FlipH" to="Viewer/ImageViewer" method="_on_FlipH_pressed"]
 [connection signal="pressed" from="Hotbar/FlipV" to="Viewer/ImageViewer" method="_on_FlipV_pressed"]
-[connection signal="pressed" from="Hotbar/Grid" to="Viewer/ImageViewer" method="_on_Grid_pressed"]
 [connection signal="pressed" from="Hotbar/Greyscale" to="Viewer/ImageViewer" method="_on_Greyscale_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
