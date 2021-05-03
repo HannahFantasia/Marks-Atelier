@@ -28,3 +28,12 @@ func _scrap2():
 
 func _scrap3():
 	var begin =  get_viewport_rect().size / 2 # Get center of the screen
+	
+#For the smooth animation you'll use Tween, For the problem you're having... 
+#well u can solve it in Many different ways
+#But the way i'm thinking is, Having the Y Size of the Tabs, 
+#if u want them like Blender (All are the same Virticle Size), 
+#Then just get the rect_size.y when the Button is pressed
+#Then use it to check, Is the Mouse moved by -rect_size.y or +rect_size.y
+#If it's +rect_size.y, Then move it by floor(mouse_moved_by/rect_size.y) in the Array
+#Then it'll be moved down, If it's -rect_size.y, Then it'll be moved up

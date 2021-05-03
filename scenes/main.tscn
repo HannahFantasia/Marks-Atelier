@@ -56,8 +56,8 @@ __meta__ = {
 
 [node name="Hotbar" type="HBoxContainer" parent="."]
 process_priority = -1
-margin_left = 213.0
-margin_right = 812.0
+margin_left = 211.74
+margin_right = 810.74
 margin_bottom = 599.0
 alignment = 1
 __meta__ = {
