@@ -88,7 +88,7 @@ margin_right = 237.0
 margin_bottom = 599.0
 texture_normal = ExtResource( 6 )
 
-[node name="Stop" type="TextureButton" parent="Hotbar"]
+[node name="Pause" type="TextureButton" parent="Hotbar"]
 margin_left = 241.0
 margin_right = 257.0
 margin_bottom = 599.0
@@ -155,21 +155,40 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 60.0
-
 [node name="TimerLabel" type="Label" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = 892.323
-margin_top = 153.111
-margin_right = 1089.32
-margin_bottom = 216.111
+margin_left = 881.686
+margin_top = 165.808
+margin_right = 930.686
+margin_bottom = 194.808
 text = "tffds"
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="TimerText" type="TextEdit" parent="."]
+margin_left = 883.593
+margin_top = 201.298
+margin_right = 923.593
+margin_bottom = 241.298
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TimerAdd" type="Button" parent="."]
+margin_left = 878.118
+margin_top = 250.604
+margin_right = 921.118
+margin_bottom = 278.604
+text = "Add"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 60.0
 
 [node name="Button" type="Button" parent="."]
 margin_left = 552.676
@@ -195,6 +214,8 @@ __meta__ = {
 }
 
 [connection signal="pressed" from="Hotbar/OpenFolder" to="Viewer/ImageViewer" method="_on_OpenFolder_pressed"]
+[connection signal="pressed" from="Hotbar/Pause" to="." method="_on_Pause_pressed"]
+[connection signal="pressed" from="Hotbar/Play" to="." method="_on_Play_pressed"]
 [connection signal="pressed" from="Hotbar/FlipH" to="Viewer/ImageViewer" method="_on_FlipH_pressed"]
 [connection signal="pressed" from="Hotbar/FlipV" to="Viewer/ImageViewer" method="_on_FlipV_pressed"]
 [connection signal="pressed" from="Hotbar/Grid" to="Viewer/ImageViewer" method="_on_Grid_pressed"]
