@@ -2,6 +2,11 @@ extends Control
 
 onready var timer = get_node("Timer")
 onready var timer_label = get_node("TimerLabel")
+onready var timer_text = get_node("TimerText")
+onready var texture_pause = load("res://textures/placeholders/pause.png")
+onready var texture_play = load("res://textures/placeholders/play.png")
+onready var play_button = get_node("Hotbar/Play")
+
 onready var image_viewer = get_node("Viewer/ImageViewer")
 onready var hotbar = get_node("Hotbar")
 onready var hotbar_bg = get_node("HotbarBg")
@@ -46,18 +51,21 @@ func _on_Button_pressed():
 #	timer functions
 
 func _on_Play_pressed():
-	var texture_pause = load("res://textures/placeholders/pause.png")
-	var texture_start = load("res://textures/placeholders/start.png")
-	
-	if timer.is_paused():
-		get_node("Hotbar/Play").set_normal_texture(texture_pause)
+#	toggle timer
+	if timer.is_stopped():
+		play_button.set_normal_texture(texture_pause)
 		timer.start()
+	elif timer.is_paused():
+		play_button.set_normal_texture(texture_pause)
+		timer.set_paused(false)
 	else:
-		pass
-#		get_node("Hotbar/Play").set_normal_texture(texture_start)
-#		timer.set_paused()
-	pass
+		play_button.set_normal_texture(texture_play)
+		timer.set_paused(true)
 
 
 
 
+func _on_TimerAdd_pressed():
+	schedule.append(timer_text.get_text())
+	print(schedule)
+	pass # Replace with function body.

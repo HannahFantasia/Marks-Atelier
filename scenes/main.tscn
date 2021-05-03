@@ -88,7 +88,7 @@ margin_right = 237.0
 margin_bottom = 599.0
 texture_normal = ExtResource( 6 )
 
-[node name="Pause" type="TextureButton" parent="Hotbar"]
+[node name="Stop" type="TextureButton" parent="Hotbar"]
 margin_left = 241.0
 margin_right = 257.0
 margin_bottom = 599.0
@@ -213,11 +213,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+margin_right = 12.0
+margin_bottom = 12.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+
 [connection signal="pressed" from="Hotbar/OpenFolder" to="Viewer/ImageViewer" method="_on_OpenFolder_pressed"]
-[connection signal="pressed" from="Hotbar/Pause" to="." method="_on_Pause_pressed"]
 [connection signal="pressed" from="Hotbar/Play" to="." method="_on_Play_pressed"]
 [connection signal="pressed" from="Hotbar/FlipH" to="Viewer/ImageViewer" method="_on_FlipH_pressed"]
 [connection signal="pressed" from="Hotbar/FlipV" to="Viewer/ImageViewer" method="_on_FlipV_pressed"]
 [connection signal="pressed" from="Hotbar/Grid" to="Viewer/ImageViewer" method="_on_Grid_pressed"]
 [connection signal="pressed" from="Hotbar/Greyscale" to="Viewer/ImageViewer" method="_on_Greyscale_pressed"]
+[connection signal="pressed" from="TimerAdd" to="." method="_on_TimerAdd_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
