@@ -25,7 +25,8 @@ __meta__ = {
 }
 
 [node name="Viewer" type="AspectRatioContainer" parent="."]
-margin_right = 1025.0
+margin_left = -1.49841
+margin_right = 1023.5
 margin_bottom = 599.0
 script = ExtResource( 4 )
 __meta__ = {
@@ -158,31 +159,31 @@ __meta__ = {
 [node name="TimerLabel" type="Label" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = 881.686
-margin_top = 165.808
-margin_right = 930.686
-margin_bottom = 194.808
-text = "tffds"
+margin_left = 848.723
+margin_top = 187.533
+margin_right = 897.723
+margin_bottom = 216.533
+text = "length"
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="TimerText" type="TextEdit" parent="."]
-margin_left = 883.593
-margin_top = 201.298
-margin_right = 923.593
-margin_bottom = 241.298
+margin_left = 846.884
+margin_top = 214.408
+margin_right = 886.884
+margin_bottom = 254.408
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="TimerAdd" type="Button" parent="."]
-margin_left = 878.118
-margin_top = 250.604
-margin_right = 921.118
-margin_bottom = 278.604
-text = "Add"
+margin_left = 845.155
+margin_top = 258.47
+margin_right = 888.155
+margin_bottom = 286.47
+text = "+"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -200,15 +201,15 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextEdit" type="TextEdit" parent="Button"]
+[node name="LoadPath" type="TextEdit" parent="Button"]
 anchor_left = -2.43
 anchor_top = 0.03
 anchor_right = -2.43
 anchor_bottom = 0.03
 margin_left = -125.321
-margin_top = -3.66392
+margin_top = -4.33134
 margin_right = 169.679
-margin_bottom = 40.3361
+margin_bottom = 39.6687
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -218,6 +219,16 @@ margin_right = 12.0
 margin_bottom = 12.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+
+[node name="CheckButton" type="CheckButton" parent="."]
+margin_left = 901.774
+margin_top = 211.312
+margin_right = 1031.77
+margin_bottom = 251.312
+text = "is break"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="pressed" from="Hotbar/OpenFolder" to="Viewer/ImageViewer" method="_on_OpenFolder_pressed"]
 [connection signal="pressed" from="Hotbar/Play" to="." method="_on_Play_pressed"]

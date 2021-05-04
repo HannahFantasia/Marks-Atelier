@@ -22,3 +22,4 @@ config/icon="res://icon.png"
 
 ImageLoader="*res://scripts/image_loader.gd"
 ProgramSettings="*res://scripts/program_settings.gd"
+Schedule="*res://scripts/schedule.gd"

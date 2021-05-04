@@ -6,23 +6,23 @@ onready var timer_text = get_node("TimerText")
 onready var texture_pause = load("res://textures/placeholders/pause.png")
 onready var texture_play = load("res://textures/placeholders/play.png")
 onready var play_button = get_node("Hotbar/Play")
+onready var is_break_checkbox = get_node("CheckButton").toggle_mode
 
+onready var load_path = get_node("Button/LoadPath")
 onready var image_viewer = get_node("Viewer/ImageViewer")
 onready var hotbar = get_node("Hotbar")
 onready var hotbar_bg = get_node("HotbarBg")
 
 var timer_pos = Vector2()
-var schedule = []
 
 # creates empty image resource for loading an image into
 var img = Image.new()
 
 func _ready():
-	pass
 #	image_viewer.texture = ImageTexture.new()
 	
 #	ImageLoader.load_directory("C:/Users/Beheerder/Desktop/projects/drawings/1-02-2021")
-
+	pass
 
 
 func _process(delta):
@@ -43,9 +43,9 @@ func _process(delta):
 
 
 func _on_Button_pressed():
-	img.load()
-	print(img)
-	image_viewer.texture.create_from_image(img, 0)
+#	img.load(load_path.text)
+#	print(img)
+#	image_viewer.texture = 
 	pass
 
 #	timer functions
@@ -66,6 +66,16 @@ func _on_Play_pressed():
 
 
 func _on_TimerAdd_pressed():
-	schedule.append(timer_text.get_text())
-	print(schedule)
+	if (timer_text.get_text() != "") && (timer_text.get_text().is_valid_integer()):
+		Schedule.add_time_block(int(timer_text.text),is_break_checkbox)
+		
+#	for i in range(Schedule.time_blocks.size()):
+#		Schedule.time_blocks.remove(schedule.find(0,0))
+		
+	#### debug
+	print("\n time_blocks")
+	for i in range(Schedule.time_blocks.size()):
+		print(String(Schedule.time_blocks[i].length) + String(Schedule.time_blocks[i].is_break))
+		
+		
 	pass # Replace with function body.
