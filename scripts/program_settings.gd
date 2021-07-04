@@ -30,3 +30,11 @@ func set_hotbar_size(value):
 func get_hotbar_size():
 	return hotbar_size
 
+
+var recursion_depth = 4 setget set_recursion_depth , get_recursion_depth
+
+func set_recursion_depth(value):
+	recursion_depth = value
+
+func get_recursion_depth():
+	return recursion_depth 

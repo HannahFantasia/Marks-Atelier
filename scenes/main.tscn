@@ -56,8 +56,8 @@ window_title = "Open a Directory"
 resizable = true
 mode = 2
 access = 2
-current_dir = "/godot/Croquis-Studio"
-current_path = "/godot/Croquis-Studio/"
+current_dir = "/Users/Beheerder/Documents/Indor/Croquis-Studio"
+current_path = "/Users/Beheerder/Documents/Indor/Croquis-Studio/"
 
 [node name="HotbarBg" type="ColorRect" parent="."]
 margin_left = 662.333
