@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://ScRR6m.jpg" type="Texture" id=1]
 [ext_resource path="res://scenes/image_viewer.gd" type="Script" id=2]
@@ -17,8 +17,6 @@
 [ext_resource path="res://textures/placeholders/greyscale.png" type="Texture" id=15]
 [ext_resource path="res://textures/placeholders/grid.png" type="Texture" id=16]
 [ext_resource path="res://textures/placeholders/volume.png" type="Texture" id=17]
-[ext_resource path="res://textures/placeholders/timer_filled.png" type="Texture" id=18]
-[ext_resource path="res://textures/placeholders/timer_empty.png" type="Texture" id=19]
 
 [node name="main" type="Control"]
 script = ExtResource( 3 )
@@ -48,6 +46,18 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="FileDialog" type="FileDialog" parent="Viewer"]
+margin_left = 212.999
+margin_right = 811.999
+margin_bottom = 599.0
+popup_exclusive = true
+window_title = "Open a Directory"
+resizable = true
+mode = 2
+access = 2
+current_dir = "/godot/Croquis-Studio"
+current_path = "/godot/Croquis-Studio/"
 
 [node name="HotbarBg" type="ColorRect" parent="."]
 margin_left = 662.333
@@ -159,6 +169,7 @@ __meta__ = {
 }
 
 [node name="TimerLabel" type="Label" parent="."]
+visible = false
 anchor_left = 1.0
 anchor_right = 1.0
 margin_left = 848.723
@@ -172,6 +183,7 @@ __meta__ = {
 }
 
 [node name="TimerText" type="TextEdit" parent="."]
+visible = false
 margin_left = 846.884
 margin_top = 214.408
 margin_right = 886.884
@@ -180,38 +192,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TimerAdd" type="Button" parent="."]
-margin_left = 845.155
-margin_top = 258.47
-margin_right = 888.155
-margin_bottom = 286.47
-text = "+"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Timer" type="Timer" parent="."]
-wait_time = 0.1
-
 [node name="Button" type="Button" parent="."]
-margin_left = 552.676
-margin_top = 177.803
-margin_right = 630.676
-margin_bottom = 213.803
-text = "path"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="LoadPath" type="TextEdit" parent="Button"]
-anchor_left = -2.43
-anchor_top = 0.03
-anchor_right = -2.43
-anchor_bottom = 0.03
-margin_left = -125.321
-margin_top = -4.33134
-margin_right = 169.679
-margin_bottom = 39.6687
+margin_left = 515.772
+margin_top = 20.0
+margin_right = 615.772
+margin_bottom = 56.0
+text = "Select Folder"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -219,37 +205,17 @@ __meta__ = {
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 margin_right = 12.0
 margin_bottom = 12.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
 
-[node name="CheckButton" type="CheckButton" parent="."]
-margin_left = 901.774
-margin_top = 211.312
-margin_right = 1031.77
-margin_bottom = 251.312
-text = "is break"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Clock" type="TextureProgress" parent="."]
-margin_left = 825.23
-margin_top = 52.5118
-margin_right = 953.23
-margin_bottom = 180.512
-max_value = 360.0
-texture_under = ExtResource( 18 )
-texture_progress = ExtResource( 19 )
-fill_mode = 5
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
+[connection signal="dir_selected" from="Viewer/FileDialog" to="." method="_on_FileDialog_dir_selected"]
 [connection signal="pressed" from="Hotbar/OpenFolder" to="Viewer/ImageViewer" method="_on_OpenFolder_pressed"]
 [connection signal="pressed" from="Hotbar/Play" to="." method="_on_Play_pressed"]
 [connection signal="pressed" from="Hotbar/FlipH" to="Viewer/ImageViewer" method="_on_FlipH_pressed"]
 [connection signal="pressed" from="Hotbar/FlipV" to="Viewer/ImageViewer" method="_on_FlipV_pressed"]
 [connection signal="pressed" from="Hotbar/Grid" to="Viewer/ImageViewer" method="_on_Grid_pressed"]
 [connection signal="pressed" from="Hotbar/Greyscale" to="Viewer/ImageViewer" method="_on_Greyscale_pressed"]
-[connection signal="pressed" from="TimerAdd" to="." method="_on_TimerAdd_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

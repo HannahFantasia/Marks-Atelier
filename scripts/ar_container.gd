@@ -15,4 +15,4 @@ func _process(delta):
 	rect_size = OS.window_size - ProgramSettings.image_margins 
 	rect_position = ProgramSettings.image_margins / 2
 	pass
-
+	
