@@ -2,11 +2,6 @@ extends HBoxContainer
 
 onready var image_viewer = get_node("/root/main/Viewer/ImageViewer")
 
-
-var gridx = 3
-var gridy = 3
-
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -14,7 +9,6 @@ func _ready():
 func _on_Grid_pressed():
 	ProgramSettings.draw_visible = not ProgramSettings.draw_visible
 	update()
-
 
 func _on_Greyscale_pressed():
 	var value = image_viewer.material.get_shader_param("is_greyscale")
