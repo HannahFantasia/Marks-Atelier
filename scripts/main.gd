@@ -61,25 +61,23 @@ func _on_Button_pressed():
 
 
 func _on_FileDialog_dir_selected(dir):
-#	print(dir)	
-	load_files_recursively(dir)
-	pass # Replace with function body.
+	ImageLoader.start_load(dir)
 
 
-func load_files_recursively(path):
-	var contents = ""
-	
-	var dir = Directory.new()
-	if dir.open(path) == OK:
-		dir.list_dir_begin(true,true)
-		contents = dir.get_next()
-		while contents != "":
-			if dir.current_is_dir():
-				print("Found directory: " + contents)
-			contents = dir.get_next()
-
-		print(contents)
-		pass
-	pass
+#func load_files_recursively(path):
+#	var contents = ""
+#
+#	var dir = Directory.new()
+#	if dir.open(path) == OK:
+#		dir.list_dir_begin(true,true)
+#		contents = dir.get_next()
+#		while contents != "":
+#			if dir.current_is_dir():
+#				print("Found directory: " + contents)
+#			contents = dir.get_next()
+#
+#		print(contents)
+#		pass
+#	pass
 	
 	
