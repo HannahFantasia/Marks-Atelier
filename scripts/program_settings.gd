@@ -1,6 +1,6 @@
 extends Node
 
-
+### Grid settings
 # grid line colour setting
 var grid_line_colour = Color(255,255,255) setget set_grid_line_colour , get_grid_line_colour
 
@@ -9,6 +9,11 @@ func set_grid_line_colour(value):
 
 func get_grid_line_colour():
 	return grid_line_colour
+
+# grid amount setting
+var gridx = 3
+var gridy = 3
+var draw_visible := false
 
 
 # image margins setting

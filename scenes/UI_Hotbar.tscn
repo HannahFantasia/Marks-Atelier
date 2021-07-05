@@ -1,0 +1,130 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://textures/placeholders/volume.png" type="Texture" id=1]
+[ext_resource path="res://textures/placeholders/grid.png" type="Texture" id=2]
+[ext_resource path="res://textures/placeholders/imageinfo.png" type="Texture" id=3]
+[ext_resource path="res://textures/placeholders/greyscale.png" type="Texture" id=4]
+[ext_resource path="res://textures/placeholders/previous.png" type="Texture" id=5]
+[ext_resource path="res://textures/placeholders/stop.png" type="Texture" id=6]
+[ext_resource path="res://textures/placeholders/flipv.png" type="Texture" id=7]
+[ext_resource path="res://textures/placeholders/openfolder.png" type="Texture" id=8]
+[ext_resource path="res://textures/placeholders/play.png" type="Texture" id=9]
+[ext_resource path="res://textures/placeholders/fliph.png" type="Texture" id=10]
+[ext_resource path="res://textures/placeholders/next.png" type="Texture" id=11]
+[ext_resource path="res://textures/placeholders/timer.png" type="Texture" id=12]
+[ext_resource path="res://scripts/UI_Hotbar.gd" type="Script" id=13]
+
+[node name="Hotbar" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Hotbar" type="HBoxContainer" parent="."]
+process_priority = -1
+margin_left = 263.653
+margin_right = 862.653
+margin_bottom = 599.0
+alignment = 1
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OpenFolder" type="TextureButton" parent="Hotbar"]
+margin_left = 181.0
+margin_right = 197.0
+margin_bottom = 599.0
+texture_normal = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ImageInfo" type="TextureButton" parent="Hotbar"]
+margin_left = 201.0
+margin_right = 217.0
+margin_bottom = 599.0
+texture_normal = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Previous" type="TextureButton" parent="Hotbar"]
+margin_left = 221.0
+margin_right = 237.0
+margin_bottom = 599.0
+texture_normal = ExtResource( 5 )
+
+[node name="Stop" type="TextureButton" parent="Hotbar"]
+margin_left = 241.0
+margin_right = 257.0
+margin_bottom = 599.0
+texture_normal = ExtResource( 6 )
+
+[node name="Play" type="TextureButton" parent="Hotbar"]
+margin_left = 261.0
+margin_right = 277.0
+margin_bottom = 599.0
+texture_normal = ExtResource( 9 )
+
+[node name="Next" type="TextureButton" parent="Hotbar"]
+margin_left = 281.0
+margin_right = 297.0
+margin_bottom = 599.0
+texture_normal = ExtResource( 11 )
+
+[node name="FlipH" type="TextureButton" parent="Hotbar"]
+margin_left = 301.0
+margin_right = 317.0
+margin_bottom = 599.0
+texture_normal = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FlipV" type="TextureButton" parent="Hotbar"]
+margin_left = 321.0
+margin_right = 337.0
+margin_bottom = 599.0
+texture_normal = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Grid" type="TextureButton" parent="Hotbar"]
+margin_left = 341.0
+margin_right = 357.0
+margin_bottom = 599.0
+toggle_mode = true
+texture_normal = ExtResource( 2 )
+
+[node name="Greyscale" type="TextureButton" parent="Hotbar"]
+margin_left = 361.0
+margin_right = 377.0
+margin_bottom = 599.0
+texture_normal = ExtResource( 4 )
+
+[node name="Timer" type="TextureButton" parent="Hotbar"]
+margin_left = 381.0
+margin_right = 397.0
+margin_bottom = 599.0
+texture_normal = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Volume" type="TextureButton" parent="Hotbar"]
+margin_left = 401.0
+margin_right = 417.0
+margin_bottom = 599.0
+texture_normal = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="Hotbar/OpenFolder" to="Hotbar" method="_on_OpenFolder_pressed"]
+[connection signal="pressed" from="Hotbar/FlipH" to="Hotbar" method="_on_FlipH_pressed"]
+[connection signal="pressed" from="Hotbar/FlipV" to="Hotbar" method="_on_FlipV_pressed"]
+[connection signal="pressed" from="Hotbar/Grid" to="Hotbar" method="_on_Grid_pressed"]
+[connection signal="pressed" from="Hotbar/Greyscale" to="Hotbar" method="_on_Greyscale_pressed"]

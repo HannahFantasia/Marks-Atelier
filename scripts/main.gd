@@ -63,9 +63,6 @@ func _on_Button_pressed():
 func _on_FileDialog_dir_selected(dir):
 #	print(dir)	
 	load_files_recursively(dir)
-	
-	
-	
 	pass # Replace with function body.
 
 
