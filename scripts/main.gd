@@ -61,7 +61,7 @@ func _on_Button_pressed():
 
 
 func _on_FileDialog_dir_selected(dir):
-	ImageLoader.start_load(dir)
+	ImageLoader.get_dir_files(dir)
 
 
 #func load_files_recursively(path):

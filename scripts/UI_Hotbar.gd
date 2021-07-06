@@ -14,6 +14,7 @@ func _on_Greyscale_pressed():
 	var value = image_viewer.material.get_shader_param("is_greyscale")
 	value = not value
 	image_viewer.material.set_shader_param("is_greyscale", value)
+	ImageLoader.print_array()
 
 func _on_FlipV_pressed():
 	image_viewer.flip_v = not image_viewer.flip_v

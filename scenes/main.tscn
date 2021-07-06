@@ -45,8 +45,8 @@ window_title = "Open a Directory"
 resizable = true
 mode = 2
 access = 2
-current_dir = "/Users/Beheerder/Documents/Indor/Croquis-Studio"
-current_path = "/Users/Beheerder/Documents/Indor/Croquis-Studio/"
+current_dir = "/godot/Croquis-Studio"
+current_path = "/godot/Croquis-Studio/"
 
 [node name="HotbarBg" type="ColorRect" parent="."]
 margin_left = 662.333
@@ -106,5 +106,6 @@ __meta__ = {
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
 
+[connection signal="confirmed" from="Viewer/FileDialog" to="." method="_on_FileDialog_confirmed"]
 [connection signal="dir_selected" from="Viewer/FileDialog" to="." method="_on_FileDialog_dir_selected"]
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
