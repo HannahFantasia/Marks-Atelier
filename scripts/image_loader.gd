@@ -50,3 +50,10 @@ func recursion(n):
 	else:
 		recursion(n - 1)
 		print(n)
+
+func check_path(path):
+	var dir = Directory.new()
+	dir.open(path)
+	print(String(dir.file_exists(path)) + path)
+
+	
