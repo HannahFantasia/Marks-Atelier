@@ -81,3 +81,7 @@ func _on_FileDialog_dir_selected(dir):
 #	pass
 	
 	
+
+
+func _on_FileDialog_confirmed():
+	ImageLoader.print_array()

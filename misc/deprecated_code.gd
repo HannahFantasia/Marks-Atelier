@@ -1,6 +1,26 @@
 extends Node
+# recursively open folders
+func get_dir_files(path: String):
+	var arr = []
+	var dir = Directory.new()
+	dir.open(path)
 
+	if dir.file_exists(path):
+		arr.append(path)
 
+	else:
+		dir.list_dir_begin(true, true)
+		while(true):
+			var subpath = dir.get_next()
+			if subpath.empty():
+				break
+			arr += get_dir_files(path.plus_file(subpath))
+			arr.shuffle()
+	return arr
+
+#shit is connected to the greyscale button for now.
+func print_array():
+	print()
 
 # THIS CODE USES THE MARGINS TO DRAW A GRID
 func _scrap1():
