@@ -11,7 +11,6 @@ func get_grid_line_colour():
 	return grid_line_colour
 
 
-
 # grid X axis
 var gridx = 3 setget set_gridx, get_gridx
 

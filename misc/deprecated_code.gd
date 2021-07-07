@@ -57,3 +57,10 @@ func _scrap3():
 #Then use it to check, Is the Mouse moved by -rect_size.y or +rect_size.y
 #If it's +rect_size.y, Then move it by floor(mouse_moved_by/rect_size.y) in the Array
 #Then it'll be moved down, If it's -rect_size.y, Then it'll be moved up
+
+
+func koek_poep(a,b):
+	print(a+b)
+
+func _ready():
+	koek_poep(5,10)
