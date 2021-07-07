@@ -41,12 +41,12 @@ margin_left = 212.999
 margin_right = 811.999
 margin_bottom = 599.0
 popup_exclusive = true
-window_title = "Open a File or Directory"
+window_title = "Open a Directory"
 resizable = true
-mode = 3
+mode = 2
 access = 2
-current_dir = "/godot/Croquis-Studio"
-current_path = "/godot/Croquis-Studio/"
+current_dir = "/Users/Beheerder/Documents/Indor/Croquis-Studio"
+current_path = "/Users/Beheerder/Documents/Indor/Croquis-Studio/"
 
 [node name="HotbarBg" type="ColorRect" parent="."]
 margin_left = 662.333

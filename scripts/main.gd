@@ -61,11 +61,8 @@ func _on_Button_pressed():
 
 
 func _on_FileDialog_dir_selected(dir):
-<<<<<<< Updated upstream
-	ImageLoader.get_dir_files(dir)
-=======
-	ImageLoader.check_path(dir)
->>>>>>> Stashed changes
+	ImageLoader.start_load(dir)
+#	ImageLoader.check_path(dir)
 
 
 #func load_files_recursively(path):
@@ -83,13 +80,3 @@ func _on_FileDialog_dir_selected(dir):
 #		print(contents)
 #		pass
 #	pass
-<<<<<<< Updated upstream
-	
-	
-
-
-func _on_FileDialog_confirmed():
-	ImageLoader.print_array()
-=======
-
->>>>>>> Stashed changes

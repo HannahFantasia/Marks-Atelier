@@ -26,6 +26,8 @@ func _draw():
 			var liney = Vector2(rect_size.x,(rect_size.y / ProgramSettings.gridy) * n)
 			draw_line(linex, liney, ProgramSettings.get_grid_line_colour())
 
+
+
 func _on_OpenFolder_pressed():
 	print(self.texture.resource_path)
 	OS.shell_open(texture.resource_path)
