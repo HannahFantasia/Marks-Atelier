@@ -3,10 +3,11 @@ extends Node
 var dir
 var contents
 var whole = []
+var images = []
 
 func start_load(path):
 	dir = Directory.new()
-	print(get_folders(path))
+	print(get_images(path))
 
 func recursion(depth):
 	
@@ -38,18 +39,18 @@ func get_folders(path):
 
 		
 func get_images(path):
-	var currentt
+	var current
 	
 	for i in whole:
-		if i.file_exists(".png"):
-			dir.list_dir_begin(true,true)
-			currentt = dir.get_next()
+		if i.file_exists(".png") or i.file_exists(".jpeg") or i.file_exists(".jpg"):
+			contents.list_dir_begin(true,true)
+			current = contents.get_next()
 			
-			while currentt != "":
-				if dir.current_is_dir():
-					whole.append(hier een path ofzo)
-				currentt = dir_get_next()
-		return
+			while current != "":
+				if contents.current_is_dir():
+					images.append(path + "/" + String(current))
+				current = contents.get_next()
+		return images
 		
 
 #func check_path(path):
